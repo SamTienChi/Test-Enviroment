@@ -1,0 +1,2 @@
+Cocacola,10.0
+Pepsi,10.0

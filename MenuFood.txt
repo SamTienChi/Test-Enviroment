@@ -1,0 +1,2 @@
+Chicken,30.0
+Fish,25.0
