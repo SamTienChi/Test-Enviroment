@@ -1,6 +1,4 @@
 import model.Menu;
-import model.Food;
-import model.Drink;
 import model.Order;
 
 import utils.validation;
@@ -93,6 +91,6 @@ public class Exercise_5_OOP {
                     System.out.println("Exit the Menu");
                     break;
             }
-        }while(n > -1 && n < 4);
+        }while(n > -1 && n < 5);
     }
 }
