@@ -14,7 +14,7 @@ public class UpdateFile {
             System.out.println("2. Add more item into file");
             System.out.println("3. Delete the file");
             System.out.println("4. Check menu");
-            System.out.println("5. Exit");
+            System.out.println("Other. Exit");
             System.out.print("+Choose your type: ");
             num = scanner.nextInt();
             switch(num){

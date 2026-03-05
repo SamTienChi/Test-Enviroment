@@ -21,13 +21,13 @@ public class Exercise_5_OOP {
 
 
         do{
-            System.out.println("Menu");
+            System.out.println("------Main Menu------");
             System.out.println("0. Check the menu");
             System.out.println("1. Order food");
             System.out.println("2. Order drink");
             System.out.println("3. Calculate total");
             System.out.println("4. Update the menu");
-            System.out.println("5. Exit");
+            System.out.println("Other. Exit");
             System.out.print("+Choose your type: ");
             n = scanner.nextInt();
             switch(n){
@@ -39,7 +39,7 @@ public class Exercise_5_OOP {
                         System.out.print("Enter your food: ");
                         String foodName = scanner.next();
                         int quantity = val.QuantityNum();
-                        Menu data = myMenu.findItem(foodName);
+                        Menu data = myMenu.findItem(foodName, "Food");
                         if(data != null){
                             Order newOrder = new Order(data.getName(), data.getPrice(), quantity);
                             order.add(newOrder);
@@ -55,7 +55,7 @@ public class Exercise_5_OOP {
                         System.out.print("Enter your drink: ");
                         String drinkName = scanner.next();
                         int quantity = val.QuantityNum();
-                        Menu data = myMenu.findItem(drinkName);
+                        Menu data = myMenu.findItem(drinkName, "Drink");
                         if(data != null){
                             Order newOrder = new Order(data.getName(), data.getPrice(), quantity);
                             order.add(newOrder);
@@ -72,7 +72,7 @@ public class Exercise_5_OOP {
                         System.out.println("-------------Bill--------------");
                         if(!order.isEmpty()) {
                             for (Order ord : order) {
-                                total += total + (ord.getPrice() * ord.getQuantity());
+                                total +=  (ord.getPrice() * ord.getQuantity());
                                 System.out.println("--" + ord.getName() + "- $:" + ord.getPrice() + " - Quantity:" + ord.getQuantity());
                             }
                         }

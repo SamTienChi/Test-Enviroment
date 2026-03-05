@@ -11,6 +11,7 @@ import java.io.*;
 public class MenuItem {
 
     ArrayList<Menu> items = new ArrayList<>();
+    ArrayList<Menu> itemCheck = new ArrayList<>();
     FileHandle myObj = new FileHandle();
 
     public void initMenu(){
@@ -32,11 +33,24 @@ public class MenuItem {
         });
     }
 
-    public Menu findItem(String name){
-        for(Menu item: items){
-            if(item.getName().equalsIgnoreCase(name)){
-                System.out.println("data: " + item);
-                return item;
+    public Menu findItem(String name , String type){
+        if(type == "Food"){
+            itemCheck.clear();
+            itemCheck.addAll(loadFood());
+            for(Menu item: itemCheck) {
+                if (item.getName().equalsIgnoreCase(name)) {
+                    System.out.println("data: " + item);
+                    return item;
+                }
+            }
+        }else if(type == "Drink"){
+            itemCheck.clear();
+            itemCheck.addAll(loadDrink());
+            for(Menu item: itemCheck) {
+                if (item.getName().equalsIgnoreCase(name)) {
+//                    System.out.println("data: " + item);
+                    return item;
+                }
             }
         }
         return null;
